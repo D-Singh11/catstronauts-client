@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client';
 import React from 'react'
-import { Layout } from '../components';
+import { Layout, ModuleDetail } from '../components';
 
 const GET_MODULE_TRACK = gql`
     query getModuleAndParentTrack($moduleId: ID!, $trackId: ID!) {
@@ -33,6 +33,7 @@ function Module(props) {
     console.log(data);
   return (
       <Layout fullWidth>
+              <ModuleDetail track={data?.track} module={data?.module} />
       </Layout>
   )
 }
