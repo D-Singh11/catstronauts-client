@@ -2,6 +2,10 @@ import { gql, useQuery } from '@apollo/client';
 import React from 'react'
 import { Layout, ModuleDetail, QueryResult } from '../components';
 
+/**
+ * GET_MODULE_TRACK gql query to retrieve a specific module and its parent track,
+ * both needed for the ModuleDetail component
+ */
 const GET_MODULE_TRACK = gql`
     query getModuleAndParentTrack($moduleId: ID!, $trackId: ID!) {
         module(id: $moduleId) {
@@ -22,6 +26,10 @@ const GET_MODULE_TRACK = gql`
     }
 `;
 
+/**
+ * Module page fetches both parent track and module's data from the gql query GET_MODULE_TRACK
+ * and feeds them to the Module detail component
+ */
 function Module(props) {
     const {trackId, moduleId}= props;
 
