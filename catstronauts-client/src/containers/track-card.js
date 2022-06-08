@@ -31,7 +31,13 @@ const TrackCard = ({ track }) => {
   const { title, thumbnail, author, length, modulesCount, id } = track;
 
   const [incrementTrackViews] = useMutation(INCREMENT_TRACK_VIEWS, {
-    variables: {incrementTrackViewsId: id}
+    variables: {incrementTrackViewsId: id},
+
+    // onCompleted property is a callback function which is run once mutation successfully completes
+     // to observe what the mutation response returns 
+    onCompleted: data => {
+      console.log('On completed data', data);
+    }
   });
 
   return (
