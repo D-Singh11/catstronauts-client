@@ -3,6 +3,25 @@ import styled from '@emotion/styled';
 import { colors, mq } from '../styles';
 import { humanReadableTimeFromSeconds } from '../utils/helpers';
 import { Link } from '@reach/router';
+import { gql } from '@apollo/client';
+
+/**
+ * Mutation to increment a track's number of views
+ * (exported for tests)
+ */
+const INCREMENT_TRACK_VIEWS = gql`
+  mutation Mutation($incrementTrackViewsId: ID!) {
+    incrementTrackViews(id: $incrementTrackViewsId) {
+      code
+      success
+      message
+      track {
+        id
+        numberOfViews
+      }
+    }
+  }
+`;
 
 /**
  * Track Card component renders basic info in a card format
