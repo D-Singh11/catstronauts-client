@@ -10,6 +10,10 @@ Clone application locally
 > \$ git clone https://github.com/D-Singh11/catstronauts-client
 .git
 
+Navigate to catstronauts-client folder
+
+> \$ cd catstronauts-client
+
 Install all dependencies by navigating to catstronauts-server directory and using following command in terminal:
 
 > \$ npm install OR yarn install
